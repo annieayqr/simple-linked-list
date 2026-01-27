@@ -6,7 +6,7 @@ class LinkedList:
     
     # Public methods
 
-    def insert(self, value):            # Add value to end of list using recursive
+    def insert(self, value):            # Add value to end of list
         newNode = Node(value)
 
         if self.head is None:
@@ -18,7 +18,7 @@ class LinkedList:
             current.next = newNode
             newNode.prev = current
 
-    def find(self, value, current=None):
+    def find(self, value, current=None):    # Recursive find
         if current is None:
             current = self.head
 

@@ -13,13 +13,6 @@ A clean implementation of a doubly linked list with mixed iterative and recursiv
 - **Print** - Display all values (iterative traversal)
 - Handles all edge cases (empty list, head/tail deletion)
 
-## Project Structure
-linked-list-python/
-├── node.py         # Node class (value + next + prev pointers)
-├── linked_list.py  # LinkedList class with core operations
-├── main.py         # Demonstration program
-└── README.md       # This documentation
-
 ## Quick Start
 ```bash
 python3 main.py
