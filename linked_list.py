@@ -18,16 +18,20 @@ class LinkedList:
             current.next = newNode
             newNode.prev = current
 
-    def find(self, value, current = None):  # Find a value
-        if current is None:             # First call
-            current = self.head         # C++ style current pointer
+    def find(self, value, current=None):
+        if current is None:
+            current = self.head
 
-        if current is None:             # Empty list or end
+        if current is None:  # Empty list or end reached
             return False
         
-        if current.value == value:       # Found
+        if current.value == value:
             return True
-
+        
+        # Check if there's a next node before recursing
+        if current.next is None:
+            return False
+        
         return self.find(value, current.next)
     
     def delete(self, value):            # Delete a value
@@ -54,14 +58,16 @@ class LinkedList:
             current.prev.next = current.next
             current.next.prev = current.prev
     
-    def printList(self):                 # Print all values
+    def printList(self):
         if self.head is None:
             print("List is empty.")
             return
-        
-        current = self.head              # C++ style current pointer
+    
+        current = self.head
         print("List: ", end="")
         while current:
             print(current.value, end="")
+            if current.next:
+                print(" <-> ", end="")
             current = current.next
         print()
